@@ -1,0 +1,16 @@
+= simple_form_for(['admin', @item]) do |f|
+  header.content-header.js-content-header
+    == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_association f, :client
+    = fae_input f, :street
+    = fae_input f, :number
+    = fae_input f, :neighborhood
+    = fae_input f, :city
+    = fae_pulldown f, :state, size: 'short', search: true, collection: f.object.states
+    = fae_input f, :postal_code
+    = fae_input f, :complement
+    = fae_input f, :reference_point
+
