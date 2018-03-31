@@ -29,7 +29,11 @@ class Sell < ApplicationRecord
     self.services.each {|s| total += s.price }
  
     if self.discount.present?
-      total = total - self.discount.value
+      if Discount.discount_types[self.discount.discount_type] == Discount.discount_types[:real]
+        total = total - self.discount.value
+      else
+        total = total - (total * (self.discount.value / 100))
+      end
     end
  
     total = (total >= 0) ? total : 0

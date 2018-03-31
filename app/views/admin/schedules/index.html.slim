@@ -4,18 +4,18 @@ main.content
   table.js-sort-column
     thead
       tr
-        th Title
-        th Discount
-        th.-action-wide Modified
+        th Id
+        th Date
+        th Client
         th.-action data-sorter="false"
 
     tbody
       - if @items.present?
         - @items.each do |item|
           tr id=fae_sort_id(item)
-            td = link_to item.fae_display_field, edit_admin_discount_path(item)
-            td = item.discount_type
-            td = fae_date_format item.updated_at
+            td = link_to item.id, edit_admin_schedule_path(item)
+            td = link_to (item.date.strftime("%d/%m - %H:%M")), edit_admin_schedule_path(item)
+            td = item.client.name
             td = fae_delete_button item
       - else
         tr: td colspan="3" No items found

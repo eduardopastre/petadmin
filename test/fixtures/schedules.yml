@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-03-31 16:38:47
+  status: 1
+  notes: MyText
+  client: one
+  service: one
+
+two:
+  date: 2018-03-31 16:38:47
+  status: 1
+  notes: MyText
+  client: two
+  service: two
