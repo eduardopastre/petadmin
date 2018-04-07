@@ -1,0 +1,9 @@
+Olá <%= @name %>, estamos confirmando seu agendamento.
+Data: <%= @date %>
+<% if !@service.nil? %>
+  Serviço: <%= @service %>
+<% end %>
+<% if !@service.nil? %>
+  Notas do agendamento:</b> <%= @notes %>
+<% end %>
+Em caso de cancelamento, favor avisar com antecedência

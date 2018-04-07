@@ -1,0 +1,15 @@
+<div style="text-align: center">
+  <h2>Olá <%= @name %>, estamos confirmando seu agendamento.</h2>
+  <br>
+  <p style="margin: 0; font-size: 1.2em"><b>Data:</b> <%= @date %></p>
+  <% if !@service.nil? %>
+    <p style="margin: 0; font-size: 1.2em"><b>Serviço:</b> <%= @service %></p>
+    <br>
+  <% end %>
+  <% if !@service.nil? %>
+    <p style="margin: 0; font-size: 1.2em"><b>Notas do agendamento:</b> <%= @notes %></p>
+    <br>
+  <% end %>
+  <br>
+  <p>Em caso de cancelamento, favor avisar com antecedência</p>
+</div>
